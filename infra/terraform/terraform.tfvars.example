@@ -1,0 +1,9 @@
+# First apply: create the private bucket, CloudFront URL, and pending ACM certificate.
+enable_custom_domain = false
+
+# After adding certificate_dns_validation_records to Squarespace DNS and the
+# certificate status becomes ISSUED, change this to true and apply again.
+# enable_custom_domain = true
+
+# Override only if the existing Jenkins role has a different name.
+# jenkins_role_name = "hubble-jenkins-instance"

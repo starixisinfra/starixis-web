@@ -5,3 +5,13 @@ out
 *.log
 .env*
 !.env.example
+
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
