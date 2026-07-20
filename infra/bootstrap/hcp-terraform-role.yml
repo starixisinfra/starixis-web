@@ -1,0 +1,106 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Short-lived HCP Terraform AWS role for the Starixis website workspace
+
+Parameters:
+  TerraformOrganization:
+    Type: String
+    Default: starixis
+  TerraformProject:
+    Type: String
+    Default: Hubble Prod
+  TerraformWorkspace:
+    Type: String
+    Default: starixis-web-production
+  WebsiteRegion:
+    Type: String
+    Default: eu-west-2
+  JenkinsRoleName:
+    Type: String
+    Default: hubble-jenkins-instance
+
+Resources:
+  TerraformRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: hcp-terraform-starixis-web-production
+      Description: Short-lived HCP Terraform role for Starixis website infrastructure
+      MaxSessionDuration: 3600
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: !Sub arn:${AWS::Partition}:iam::${AWS::AccountId}:oidc-provider/app.terraform.io
+            Action: sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringEquals:
+                app.terraform.io:aud: aws.workload.identity
+              StringLike:
+                app.terraform.io:sub: !Sub organization:${TerraformOrganization}:project:${TerraformProject}:workspace:${TerraformWorkspace}:run_phase:*
+      Policies:
+        - PolicyName: starixis-web-terraform
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Sid: IdentifyAccount
+                Effect: Allow
+                Action: sts:GetCallerIdentity
+                Resource: "*"
+              - Sid: ManageWebsiteBucket
+                Effect: Allow
+                Action: s3:*
+                Resource:
+                  - !Sub arn:${AWS::Partition}:s3:::starixis-web-production-${AWS::AccountId}-${WebsiteRegion}
+                  - !Sub arn:${AWS::Partition}:s3:::starixis-web-production-${AWS::AccountId}-${WebsiteRegion}/*
+              - Sid: ManageWebsiteCloudFront
+                Effect: Allow
+                Action: cloudfront:*
+                Resource: "*"
+              - Sid: ManageWebsiteCertificate
+                Effect: Allow
+                Action:
+                  - acm:AddTagsToCertificate
+                  - acm:DeleteCertificate
+                  - acm:DescribeCertificate
+                  - acm:ListTagsForCertificate
+                  - acm:RemoveTagsFromCertificate
+                  - acm:RequestCertificate
+                Resource: !Sub arn:${AWS::Partition}:acm:us-east-1:${AWS::AccountId}:certificate/*
+              - Sid: ManageWebsiteParameters
+                Effect: Allow
+                Action:
+                  - ssm:AddTagsToResource
+                  - ssm:DeleteParameter
+                  - ssm:GetParameter
+                  - ssm:GetParameters
+                  - ssm:ListTagsForResource
+                  - ssm:PutParameter
+                  - ssm:RemoveTagsFromResource
+                Resource: !Sub arn:${AWS::Partition}:ssm:${WebsiteRegion}:${AWS::AccountId}:parameter/starixis/web/production/*
+              - Sid: DescribeWebsiteParameters
+                Effect: Allow
+                Action: ssm:DescribeParameters
+                Resource: "*"
+              - Sid: ManageJenkinsWebsitePolicy
+                Effect: Allow
+                Action:
+                  - iam:DeleteRolePolicy
+                  - iam:GetRole
+                  - iam:GetRolePolicy
+                  - iam:ListRolePolicies
+                  - iam:PutRolePolicy
+                Resource: !Sub arn:${AWS::Partition}:iam::${AWS::AccountId}:role/${JenkinsRoleName}
+      Tags:
+        - Key: Project
+          Value: starixis-web
+        - Key: Environment
+          Value: production
+        - Key: ManagedBy
+          Value: cloudformation-bootstrap
+        - Key: Owner
+          Value: starixis
+
+Outputs:
+  TerraformRoleArn:
+    Description: Set this as TFC_AWS_RUN_ROLE_ARN in the HCP Terraform workspace.
+    Value: !GetAtt TerraformRole.Arn

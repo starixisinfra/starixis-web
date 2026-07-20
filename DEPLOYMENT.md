@@ -22,6 +22,23 @@ No AWS access keys are stored in Jenkins or this repository.
 The Terraform configuration uses the HCP Terraform organization `starixis` and
 workspace `starixis-web-production`.
 
+Bootstrap the workspace's short-lived AWS role once from an authenticated
+administrator workstation:
+
+```bash
+aws cloudformation deploy \
+  --region eu-west-2 \
+  --stack-name starixis-web-hcp-terraform-auth \
+  --template-file infra/bootstrap/hcp-terraform-role.yml \
+  --capabilities CAPABILITY_NAMED_IAM
+```
+
+Configure the workspace environment variables `TFC_AWS_PROVIDER_AUTH`,
+`TFC_AWS_RUN_ROLE_ARN`, `TFC_AWS_PROVIDER_AUTH_us_east_1`, and
+`TFC_AWS_RUN_ROLE_ARN_us_east_1`. Both role variables use the stack's
+`TerraformRoleArn` output. HCP Terraform then supplies short-lived credentials
+for the default and `us_east_1` provider configurations.
+
 ```bash
 cd infra/terraform
 terraform init
@@ -32,9 +49,6 @@ terraform apply
 The first apply intentionally leaves `enable_custom_domain = false`. The site
 is immediately available on the `cloudfront_domain_name` output while the
 certificate is validated.
-
-The HCP workspace needs AWS credentials or the same AWS dynamic-credentials
-variable set used by the other Starixis infrastructure workspaces.
 
 ## 2. Validate the ACM certificate
 
