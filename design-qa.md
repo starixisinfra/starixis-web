@@ -5,7 +5,7 @@
 - Implementation captures: `/Users/yogeshnagar/GitHub/starixis-web/qa/implementation-hero-1280.png`, `/Users/yogeshnagar/GitHub/starixis-web/qa/final-innovation-1280.png`, `/Users/yogeshnagar/GitHub/starixis-web/qa/final-mobile-390.png`
 - Side-by-side evidence: `/Users/yogeshnagar/GitHub/starixis-web/qa/innovation-comparison.png`
 - Viewports: desktop 1280 × 900; mobile 390 × 844
-- States: desktop hero, desktop innovation grid, mobile hero, mobile navigation open/closed, form validation error, form success
+- States: desktop hero, desktop innovation grid, mobile hero, mobile navigation open/closed, direct email contact CTA
 
 ## Findings
 
@@ -15,8 +15,8 @@ No actionable P0, P1, or P2 mismatches remain.
 - Spacing and layout rhythm: the 1280px shell, 40px/22px gutters, section spacing, card grids, connector sequence, capability columns, radii, and hairline dividers match the reference. Desktop and mobile screenshots show no horizontal overflow or clipped controls.
 - Colors and visual tokens: the graphite, surface, cyan, blue, violet, border, and text hierarchy values map directly to the supplied tokens. Contrast and focus treatment remain visible.
 - Image quality and asset fidelity: the source requires no raster imagery. The hero network is a DPR-aware Canvas recreation of the supplied node and edge algorithm; UI marks use the specified Lucide icon family. The favicon and social card are clean vector placeholders requested by the handoff.
-- Copy and content: all marketing copy, labels, capability items, trust statements, form options, and footer text match the handoff. No unsupported claims were added.
-- Interaction and accessibility: sticky-nav opacity, mobile menu, Escape close, anchor navigation, reduced-motion behavior, focus styles, form labels, client/server validation, success state, semantic headings, canvas decoration, legal routes, 404, robots, sitemap, and metadata were checked.
+- Copy and content: all marketing copy, labels, capability items, trust statements, contact email, and footer text are coherent and consistent. No unsupported claims were added.
+- Interaction and accessibility: sticky-nav opacity, mobile menu, Escape close, anchor navigation, reduced-motion behavior, focus styles, direct email link, semantic headings, canvas decoration, legal routes, 404, robots, sitemap, and metadata were checked.
 
 ## Open Questions
 
@@ -25,9 +25,9 @@ No actionable P0, P1, or P2 mismatches remain.
 
 ## Comparison History
 
-1. Initial browser pass found a P2 functional gap: the form only checked email syntax and did not preserve the form element across its asynchronous submission. Shared client/server validation was added in `lib/contact.ts`, the local API validation endpoint was added, and the form reset bug was fixed.
-2. Post-fix evidence: blank submission returns “Please enter your name.”; valid local submission returns “Thanks — connect a form service to receive this.”; mobile menu opens, closes after navigation, and reports `aria-expanded`; browser console contains no errors or warnings.
-3. Production build and lint both pass after the final fix.
+1. Initial implementation included a contact form; this was intentionally replaced with a direct `contact@starixis.com` mail link at the owner's request.
+2. Mobile menu opens, closes after navigation, and reports `aria-expanded`; browser console contained no errors or warnings in the prior interaction pass.
+3. Production build and lint both pass after the contact simplification.
 
 ## Follow-up Polish
 
@@ -39,7 +39,7 @@ No actionable P0, P1, or P2 mismatches remain.
 - [x] Desktop and mobile layout verified
 - [x] Primary navigation and mobile menu verified
 - [x] Canvas visual and reduced-motion path implemented
-- [x] Contact validation error and success states verified
+- [x] Direct contact email link implemented consistently
 - [x] Browser console checked
 - [x] Production build and lint passed
 
