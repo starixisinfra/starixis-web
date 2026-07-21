@@ -10,7 +10,7 @@ const title = "Starixis Limited — Connected Retail Technology";
 const description = "Starixis develops connected retail technology designed to bring systems, operations, information, and customer experiences together.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://starixis.com"),
+  metadataBase: new URL("https://www.starixis.com"),
   title,
   description,
   manifest: "/site.webmanifest",
@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     shortcut: "/starixis-icon-32.png",
     apple: [{ url: "/starixis-app-icon-1024.png", sizes: "1024x1024", type: "image/png" }],
   },
-  openGraph: { title, description, url: "https://starixis.com", siteName: "Starixis", images: ["/og-image.svg"], type: "website" },
+  openGraph: { title, description, url: "https://www.starixis.com", siteName: "Starixis", images: ["/og-image.svg"], type: "website" },
   twitter: { card: "summary_large_image", title, description, images: ["/og-image.svg"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const organization = { "@context": "https://schema.org", "@type": "Organization", name: "Starixis Limited", url: "https://starixis.com", logo: "https://starixis.com/starixis-icon-512.png" };
+  const organization = { "@context": "https://schema.org", "@type": "Organization", name: "Starixis Limited", url: "https://www.starixis.com", logo: "https://www.starixis.com/starixis-icon-512.png", sameAs: ["https://www.linkedin.com/company/starixis"] };
   return (
     <html lang="en" className={`${inter.variable} ${space.variable} ${mono.variable}`}>
       <body>

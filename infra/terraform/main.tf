@@ -74,12 +74,39 @@ resource "aws_cloudfront_origin_access_control" "website" {
 resource "aws_cloudfront_function" "uri_rewrite" {
   name    = "${local.name_prefix}-uri-rewrite"
   runtime = "cloudfront-js-2.0"
-  comment = "Resolve extensionless Next.js routes to index.html"
+  comment = "Redirect the apex domain and resolve extensionless Next.js routes"
   publish = true
   code    = <<-JAVASCRIPT
+    function queryString(query) {
+      var pairs = [];
+
+      Object.keys(query).forEach(function (key) {
+        var entry = query[key];
+        var values = entry.multiValue || [entry];
+
+        values.forEach(function (item) {
+          pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(item.value));
+        });
+      });
+
+      return pairs.length ? '?' + pairs.join('&') : '';
+    }
+
     function handler(event) {
       var request = event.request;
       var uri = request.uri;
+
+      if (request.headers.host && request.headers.host.value === 'starixis.com') {
+        return {
+          statusCode: 301,
+          statusDescription: 'Moved Permanently',
+          headers: {
+            location: {
+              value: 'https://www.starixis.com' + uri + queryString(request.querystring)
+            }
+          }
+        };
+      }
 
       if (uri.endsWith('/')) {
         request.uri = uri + 'index.html';

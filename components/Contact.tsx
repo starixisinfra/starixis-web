@@ -8,7 +8,7 @@ export function Contact() {
           <Reveal className="eyebrow">Collaborate</Reveal>
           <Reveal as="h2" id="contact-heading" className="heading">Tell us what you are trying to connect, understand, or improve.</Reveal>
           <Reveal as="p" className="body-copy">We are interested in selective collaboration with retailers, operators, and technology partners working to make retail systems more connected, understandable, and responsive.</Reveal>
-          <Reveal className="contact-meta"><div><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn →</a></div></Reveal>
+          <Reveal className="contact-meta"><div><a href="https://www.linkedin.com/company/starixis" target="_blank" rel="noopener noreferrer">LinkedIn →</a></div></Reveal>
         </div>
         <Reveal className="email-panel">
           <p className="eyebrow">Get in touch</p>
