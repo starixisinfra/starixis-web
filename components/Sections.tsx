@@ -2,25 +2,25 @@ import { Activity, Blend, Box, CircleDashed, Diamond, ScanLine } from "lucide-re
 import { Reveal } from "./Reveal";
 
 const innovation = [
-  { code: "A / Intelligence", title: "Retail Intelligence", text: "Transform fragmented operational signals into clearer, more useful understanding. Context that helps teams see what is actually happening.", color: "#4fd6e6", Icon: Box },
-  { code: "B / Connected", title: "Connected Environments", text: "Create stronger relationships between physical spaces, digital systems, products, teams, and customer interactions. Fewer gaps between them.", color: "#7aa8ff", Icon: Blend },
-  { code: "C / Visibility", title: "Operational Visibility", text: "Help retail organizations understand conditions, exceptions, patterns, and opportunities across their environments as they emerge.", color: "#9a86ff", Icon: ScanLine },
-  { code: "D / Automation", title: "Intelligent Automation", text: "Design automation that supports people, improves consistency, and reduces avoidable operational friction — without removing judgment.", color: "#4fd6e6", Icon: Diamond },
-  { code: "E / Experience", title: "Adaptive Experiences", text: "Explore experiences that can respond more intelligently to context, intent, environment, and customer needs as they change.", color: "#7aa8ff", Icon: CircleDashed },
-  { code: "F / Infrastructure", title: "Modern Retail Infrastructure", text: "Build flexible foundations that allow retail capabilities and systems to evolve without creating more fragmentation over time.", color: "#9a86ff", Icon: Activity },
+  { code: "A / Understanding", title: "Operational Understanding", text: "Bring fragmented operational information into clearer context, helping retail teams make better-informed day-to-day decisions.", color: "#4fd6e6", Icon: Box },
+  { code: "B / Connected", title: "Connected Retail", text: "Connect stores, digital channels, commerce systems, inventory, teams, and customer interactions so they can work together more effectively.", color: "#7aa8ff", Icon: Blend },
+  { code: "C / Visibility", title: "Retail Visibility", text: "Make it easier to understand changing conditions, exceptions, and priorities across retail operations without losing sight of the customer experience.", color: "#9a86ff", Icon: ScanLine },
+  { code: "D / Automation", title: "Responsible Automation", text: "Develop automation that improves consistency and reduces avoidable friction while keeping people informed and accountable.", color: "#4fd6e6", Icon: Diamond },
+  { code: "E / Experience", title: "Responsive Experiences", text: "Create more relevant customer interactions by helping retail experiences respond to context across physical and digital channels.", color: "#7aa8ff", Icon: CircleDashed },
+  { code: "F / Systems", title: "Adaptable Retail Systems", text: "Build flexible technology that can evolve with changing operations, customer expectations, and commerce systems without adding more disconnected tools.", color: "#9a86ff", Icon: Activity },
 ];
 
 const principles = [
-  { number: "01", title: "Observe the whole system", text: "Retail outcomes are shaped by interactions between people, processes, environments, and technology — not any one layer alone.", color: "#4fd6e6" },
-  { number: "02", title: "Turn signals into context", text: "Data becomes valuable when it helps explain what is happening and what deserves attention right now.", color: "#7aa8ff" },
-  { number: "03", title: "Design for real environments", text: "Technology must work within the complexity, constraints, and pace of real retail operations.", color: "#9a86ff" },
-  { number: "04", title: "Keep people in the loop", text: "Intelligence and automation should improve human judgment rather than remove accountability.", color: "#4fd6e6" },
+  { number: "01", title: "See retail as a whole", text: "Stores, digital channels, inventory, customer interactions, teams, and commerce systems shape one another.", color: "#4fd6e6" },
+  { number: "02", title: "Turn information into context", text: "Information becomes useful when it helps explain what is happening and what deserves attention.", color: "#7aa8ff" },
+  { number: "03", title: "Design for daily operations", text: "Technology must work within the complexity, constraints, and pace of real retail operations.", color: "#9a86ff" },
+  { number: "04", title: "Keep people in control", text: "Automation should support human judgment and preserve accountability for meaningful decisions.", color: "#4fd6e6" },
 ];
 
 const capabilities = [
-  { title: "Inputs", color: "#7aa8ff", items: ["Operational data", "Environmental signals", "Commerce systems", "Inventory information", "Customer interactions", "Team workflows"] },
-  { title: "Intelligence layer", color: "#4fd6e6", highlight: true, items: ["Contextual analysis", "Pattern recognition", "Decision support", "Orchestration", "Automation", "Experience logic"] },
-  { title: "Outcomes", color: "#9a86ff", items: ["Greater visibility", "Faster understanding", "More coordinated operations", "Reduced friction", "More relevant experiences", "Better-informed decisions"] },
+  { title: "Retail inputs", color: "#7aa8ff", items: ["Operational information", "Store and digital signals", "Commerce systems", "Inventory information", "Customer interactions", "Team workflows"] },
+  { title: "Connected technology", color: "#4fd6e6", highlight: true, items: ["Contextual understanding", "Pattern recognition", "Decision support", "System coordination", "Responsible automation", "Experience logic"] },
+  { title: "Practical outcomes", color: "#9a86ff", items: ["Clearer visibility", "Faster understanding", "More coordinated operations", "Reduced friction", "More relevant experiences", "Better-informed decisions"] },
 ];
 
 const trust = [
@@ -37,10 +37,10 @@ export function Manifesto() {
     <section className="shell section" aria-labelledby="premise-heading">
       <div className="manifesto">
         <Reveal className="eyebrow">The premise</Reveal>
-        <Reveal as="h2" id="premise-heading" className="heading">Retail is no longer a collection of disconnected moments.</Reveal>
+        <Reveal as="h2" id="premise-heading" className="heading">Retail works as one connected system.</Reveal>
         <Reveal className="two-col">
-          <p className="body-copy">Modern retail spans stores, digital channels, inventory, teams, customer interactions, and operational systems. Each once ran on its own — today they move together, whether or not the underlying technology does.</p>
-          <p className="body-copy">Every retail environment produces signals. The opportunity is not simply to collect more data, but to transform those signals into context, understanding, and useful action. Starixis builds the connective intelligence across those layers.</p>
+          <p className="body-copy">Stores, digital channels, inventory, retail teams, and customer interactions increasingly shape one another.</p>
+          <p className="body-copy">The systems behind them often remain disconnected. Starixis develops the technology that helps those parts work together more effectively.</p>
         </Reveal>
       </div>
     </section>
@@ -52,7 +52,7 @@ export function InnovationAreas() {
     <section id="innovation" className="shell section" aria-labelledby="innovation-heading">
       <div className="section-header">
         <div><Reveal className="eyebrow">Innovation Areas / 06</Reveal><Reveal as="h2" id="innovation-heading" className="heading">Where Starixis innovates</Reveal></div>
-        <Reveal as="p" className="note">Areas of active work, research, and development — not a catalogue of finished products.</Reveal>
+        <Reveal as="p" className="note">Our work spans six connected areas of retail technology. Together, they reflect how we approach the challenges of modern retail.</Reveal>
       </div>
       <div className="card-grid">
         {innovation.map(({ code, title, text, color, Icon }, index) => (
@@ -72,7 +72,7 @@ export function Principles() {
     <section id="principles" className="band" aria-labelledby="principles-heading">
       <div className="shell section">
         <Reveal className="eyebrow">How Starixis thinks</Reveal>
-        <Reveal as="h2" id="principles-heading" className="heading principles-title">Four principles that shape every system we build.</Reveal>
+        <Reveal as="h2" id="principles-heading" className="heading principles-title">Four principles that shape the systems we develop.</Reveal>
         <div className="principles-wrap">
           <div className="principles-line" aria-hidden="true" />
           <div className="principles-grid">
@@ -118,8 +118,8 @@ export function FutureStatement() {
       <div className="grid-mask" />
       <div className="shell future-inner">
         <Reveal className="eyebrow">The future of retail</Reveal>
-        <Reveal as="h2" id="future-heading">The future of retail will not be defined by more software. It will be defined by systems that <span>understand how retail actually works.</span></Reveal>
-        <Reveal as="p" className="body-copy">Starixis is focused on connected intelligence, practical implementation, and responsible innovation — building adaptable, long-term infrastructure rather than another layer of disconnected tools.</Reveal>
+        <Reveal as="h2" id="future-heading">The future of retail depends on systems that <span>understand how retail actually works.</span></Reveal>
+        <Reveal as="p" className="body-copy">Our work is focused on connecting operational information, commerce systems, retail teams, and customer experiences with a practical, responsible, and long-term approach.</Reveal>
       </div>
     </section>
   );
@@ -131,8 +131,8 @@ export function ResponsibleInnovation() {
       <div className="responsible-grid">
         <div className="responsible-copy">
           <Reveal className="eyebrow">Responsible innovation</Reveal>
-          <Reveal as="h2" id="responsible-heading" className="heading">Intelligence should earn trust.</Reveal>
-          <Reveal as="p" className="body-copy">We consider responsibility part of the system design — not an addition made after deployment. The technologies shaping retail should be understandable, secure, dependable, and respectful of the people they affect.</Reveal>
+          <Reveal as="h2" id="responsible-heading" className="heading">Retail technology should earn trust.</Reveal>
+          <Reveal as="p" className="body-copy">Responsibility is considered from the first design decision. The technologies shaping retail should be understandable, secure, dependable, accessible, and respectful of the people they affect.</Reveal>
         </div>
         <Reveal className="trust-grid">
           {trust.map(([title, text]) => <div className="trust-item" key={title}><h3>{title}</h3><p>{text}</p></div>)}
@@ -147,8 +147,9 @@ export function About() {
     <section id="about" className="band" aria-labelledby="about-heading">
       <div className="shell section about-inner">
         <Reveal className="eyebrow">About Starixis</Reveal>
-        <Reveal as="h2" id="about-heading" className="about-lead">Starixis Inc. is a technology company focused on the systems, intelligence, and infrastructure shaping the future of retail. We combine product thinking, engineering, design, and retail understanding to explore and build more connected ways for retail environments to operate.</Reveal>
-        <Reveal as="p" className="about-secondary">We are building with a long-term view: fewer disconnected tools, clearer intelligence, and technology that fits the reality of retail.</Reveal>
+        <Reveal as="h2" id="about-heading" className="about-lead">Starixis Limited is a retail technology company building systems for more connected, responsive retail. We combine product thinking, engineering, design, and retail understanding to turn complex retail challenges into practical technology.</Reveal>
+        <Reveal as="p" className="about-secondary">We take a long-term view: fewer disconnected tools, clearer understanding, and systems designed around how retail actually operates.</Reveal>
+        <Reveal as="p" className="about-secondary">We develop our own retail technologies and are interested in selective collaboration with retailers, operators, and technology partners.</Reveal>
       </div>
     </section>
   );
