@@ -8,7 +8,7 @@ export function Hero() {
       <div className="shell">
         <div className="hero-grid">
           <div className="hero-copy">
-            <Reveal className="eyebrow">Connected Retail Technology</Reveal>
+            <Reveal className="eyebrow">Connected Retail Innovation</Reveal>
             <Reveal as="h1" delay={80}>Building connected technology for the future of retail.</Reveal>
             <Reveal as="p" className="hero-lede" delay={160}>Starixis builds connected retail technology that helps teams make sense of fragmented information, improve day-to-day operations, and create more responsive customer experiences.</Reveal>
             <Reveal className="hero-actions" delay={240}>

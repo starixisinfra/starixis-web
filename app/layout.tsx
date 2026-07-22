@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-space", display: "swap" });
 const mono = IBM_Plex_Mono({ subsets: ["latin"], variable: "--font-mono", weight: ["400", "500"], display: "swap" });
 
-const title = "Starixis Limited — Connected Retail Technology";
+const title = "Starixis Limited — Connected Retail Innovation";
 const description = "Starixis develops connected retail technology designed to bring systems, operations, information, and customer experiences together.";
 
 export const metadata: Metadata = {
@@ -33,7 +33,20 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const organization = { "@context": "https://schema.org", "@type": "Organization", name: "Starixis Limited", url: "https://www.starixis.com", logo: "https://www.starixis.com/starixis-icon-512.png", sameAs: ["https://www.linkedin.com/company/starixis"] };
+  const organization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Starixis Limited",
+    url: "https://www.starixis.com",
+    logo: "https://www.starixis.com/starixis-icon-512.png",
+    sameAs: ["https://www.linkedin.com/company/starixis"],
+    founder: {
+      "@type": "Person",
+      name: "Yogesh Nagar",
+      jobTitle: "Founder",
+      image: "https://www.starixis.com/yogesh-nagar-founder-starixis.jpg",
+    },
+  };
   return (
     <html lang="en" className={`${inter.variable} ${space.variable} ${mono.variable}`}>
       <body>

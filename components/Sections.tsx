@@ -1,4 +1,5 @@
 import { Activity, Blend, Box, CircleDashed, Diamond, ScanLine } from "lucide-react";
+import Image from "next/image";
 import { Reveal } from "./Reveal";
 
 const innovation = [
@@ -150,6 +151,37 @@ export function About() {
         <Reveal as="h2" id="about-heading" className="about-lead">Starixis Limited is a retail technology company building systems for more connected, responsive retail. We combine product thinking, engineering, design, and retail understanding to turn complex retail challenges into practical technology.</Reveal>
         <Reveal as="p" className="about-secondary">We take a long-term view: fewer disconnected tools, clearer understanding, and systems designed around how retail actually operates.</Reveal>
         <Reveal as="p" className="about-secondary">We develop our own retail technologies and are interested in selective collaboration with retailers, operators, and technology partners.</Reveal>
+      </div>
+    </section>
+  );
+}
+
+export function Founder() {
+  return (
+    <section className="shell section founder" aria-labelledby="founder-heading">
+      <div className="founder-grid">
+        <Reveal className="founder-portrait-wrap">
+          <div className="founder-glow" aria-hidden="true" />
+          <div className="founder-portrait">
+            <Image
+              src="/yogesh-nagar-founder-starixis.jpg"
+              alt="Yogesh Nagar, Founder of Starixis"
+              width={1400}
+              height={1700}
+              sizes="(max-width: 900px) min(86vw, 360px), 360px"
+              unoptimized
+            />
+          </div>
+        </Reveal>
+        <div className="founder-copy">
+          <Reveal className="eyebrow">Founder</Reveal>
+          <Reveal as="h2" id="founder-heading" className="founder-name">Yogesh Nagar</Reveal>
+          <Reveal as="p" className="founder-role">Founder, Starixis</Reveal>
+          <Reveal className="founder-bio">
+            <p>Starixis was founded by Yogesh Nagar, a technology consultant and product builder focused on turning complex, fragmented systems into simpler digital experiences.</p>
+            <p>After years of working with large-scale technology, Yogesh began exploring how thoughtful engineering and product design could be applied to everyday retail challenges. He created Starixis as a home for building retail technologies that connect operations, information, and customer experiences more effectively.</p>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

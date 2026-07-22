@@ -2,7 +2,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Nav } from "@/components/Nav";
-import { About, CapabilityDiagram, FutureStatement, InnovationAreas, Manifesto, Principles, ResponsibleInnovation } from "@/components/Sections";
+import { About, CapabilityDiagram, Founder, FutureStatement, InnovationAreas, Manifesto, Principles, ResponsibleInnovation } from "@/components/Sections";
 
 export default function Home() {
   return (
@@ -17,6 +17,7 @@ export default function Home() {
         <FutureStatement />
         <ResponsibleInnovation />
         <About />
+        <Founder />
         <Contact />
       </main>
       <Footer />
