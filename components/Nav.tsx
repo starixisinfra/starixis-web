@@ -1,15 +1,16 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Brand } from "./Brand";
 
 const links = [
-  ["Innovation", "#innovation"],
-  ["Capabilities", "#capabilities"],
-  ["Principles", "#principles"],
-  ["About", "#about"],
-  ["Contact", "#contact"],
+  ["Innovation", "/#innovation"],
+  ["Capabilities", "/#capabilities"],
+  ["Principles", "/#principles"],
+  ["About", "/#about"],
+  ["Contact", "/#contact"],
 ];
 
 export function Nav() {
@@ -35,16 +36,16 @@ export function Nav() {
       <div className="shell nav-inner">
         <Brand />
         <div className="nav-links">
-          {links.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
-          <a className="nav-cta" href="#contact">Start a conversation</a>
+          {links.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
+          <Link className="nav-cta" href="/#contact">Start a conversation</Link>
         </div>
         <button className="menu-button" type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen((value) => !value)}>
           {open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
         </button>
       </div>
       <div id="mobile-menu" className={`mobile-menu${open ? " open" : ""}`}>
-        {links.map(([label, href]) => <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>)}
-        <a className="button button-primary" href="#contact" onClick={() => setOpen(false)}>Start a conversation</a>
+        {links.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
+        <Link className="button button-primary" href="/#contact" onClick={() => setOpen(false)}>Start a conversation</Link>
       </div>
     </nav>
   );
