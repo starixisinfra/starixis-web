@@ -12,7 +12,14 @@ export function Footer() {
             <div className="footer-column"><span className="footer-label">Company</span><Link href="/#contact">Contact</Link><a href="https://www.linkedin.com/company/starixis" target="_blank" rel="noopener noreferrer">LinkedIn</a><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></div>
           </div>
         </div>
-        <div className="footer-bottom"><span>© {new Date().getFullYear()} Starixis Limited. All rights reserved.</span><a className="footer-email" href="mailto:contact@starixis.com">contact@starixis.com</a></div>
+        <div className="footer-bottom">
+          <div className="footer-company-details">
+            <span>© {new Date().getFullYear()} Starixis Limited. All rights reserved.</span>
+            <span>Registered in England and Wales · Company number 17356742</span>
+            <address>Registered office: 71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ</address>
+          </div>
+          <a className="footer-email" href="mailto:contact@starixis.com">contact@starixis.com</a>
+        </div>
       </div>
     </footer>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LegalPage, TBC, type TocItem } from "@/components/LegalPage";
+import { LegalPage, type TocItem } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
   title: "Website Terms of Use — Starixis Limited",
@@ -26,11 +26,11 @@ const toc: TocItem[] = [
 
 export default function Terms() {
   return (
-    <LegalPage title="Website Terms of Use" effectiveDate="22 July 2026" lastUpdated="22 July 2026" toc={toc}>
+    <LegalPage title="Website Terms of Use" effectiveDate="22 July 2026" lastUpdated="23 July 2026" toc={toc}>
       <section id="about">
         <h2>1. About these terms</h2>
         <p>
-          These Website Terms of Use (&ldquo;terms&rdquo;) apply to your access to and use of starixis.com (the &ldquo;website&rdquo;), an informational corporate website operated by <strong>Starixis Limited</strong>, a company registered in England and Wales <TBC>(company number to be confirmed)</TBC> whose registered office is at <TBC>registered office address to be confirmed</TBC> (&ldquo;Starixis&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;).
+          These Website Terms of Use (&ldquo;terms&rdquo;) apply to your access to and use of starixis.com (the &ldquo;website&rdquo;), an informational corporate website operated by <strong>Starixis Limited</strong>, a company registered in England and Wales with company number 17356742, whose registered office is at 71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ (&ldquo;Starixis&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;).
         </p>
         <p>
           These terms cover the informational corporate website only. They are not product terms, marketplace terms, customer account terms, seller terms, mobile-application terms, payment terms, or a software licence agreement. By using the website, you agree to these terms; if you do not agree, please do not use the website.
@@ -159,7 +159,7 @@ export default function Terms() {
           <table className="legal-table">
             <tbody>
               <tr><th scope="row">Email</th><td>contact@starixis.com</td></tr>
-              <tr><th scope="row">Postal address</th><td><TBC>registered office / correspondence address to be confirmed</TBC></td></tr>
+              <tr><th scope="row">Postal address</th><td>71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ</td></tr>
             </tbody>
           </table>
         </div>

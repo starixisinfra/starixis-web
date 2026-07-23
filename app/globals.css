@@ -167,6 +167,8 @@ button, input, select, textarea { font: inherit; }
 .footer-label { margin-bottom: 2px; color: #5f6b7a; font: 500 11px/1.4 var(--font-mono), monospace; letter-spacing: .14em; text-transform: uppercase; }
 .footer-column a { color: var(--mid); font-size: 14px; }
 .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 24px; color: #5f6b7a; border-top: 1px solid var(--hairline); font-size: 13px; }
+.footer-company-details { display: flex; max-width: 760px; flex-direction: column; gap: 6px; line-height: 1.55; }
+.footer-company-details address { font-style: normal; }
 .footer-email { font-family: var(--font-mono), monospace; }
 
 .legal { min-height: 100vh; padding: 130px 0 100px; }

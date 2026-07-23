@@ -37,9 +37,22 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Starixis Limited",
+    legalName: "Starixis Limited",
     url: "https://www.starixis.com",
     logo: "https://www.starixis.com/starixis-icon-512.png",
     sameAs: ["https://www.linkedin.com/company/starixis"],
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "Companies House",
+      value: "17356742",
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "71-75 Shelton Street",
+      addressLocality: "London",
+      postalCode: "WC2H 9JQ",
+      addressCountry: "GB",
+    },
     founder: {
       "@type": "Person",
       name: "Yogesh Nagar",

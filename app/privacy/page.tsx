@@ -26,7 +26,7 @@ const toc: TocItem[] = [
 
 export default function Privacy() {
   return (
-    <LegalPage title="Website Privacy Notice" effectiveDate="22 July 2026" lastUpdated="22 July 2026" toc={toc}>
+    <LegalPage title="Website Privacy Notice" effectiveDate="22 July 2026" lastUpdated="23 July 2026" toc={toc}>
       <section id="who-we-are">
         <h2>1. Who we are</h2>
         <p>
@@ -36,8 +36,8 @@ export default function Privacy() {
           <table className="legal-table">
             <tbody>
               <tr><th scope="row">Legal name</th><td>Starixis Limited</td></tr>
-              <tr><th scope="row">Company number</th><td><TBC>Companies House registration number to be confirmed</TBC></td></tr>
-              <tr><th scope="row">Registered office</th><td><TBC>registered office address to be confirmed</TBC></td></tr>
+              <tr><th scope="row">Company number</th><td>17356742</td></tr>
+              <tr><th scope="row">Registered office</th><td>71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ</td></tr>
               <tr><th scope="row">Principal place of business</th><td><TBC>to be confirmed — presumed the same as the registered office unless notified otherwise</TBC></td></tr>
               <tr><th scope="row">General contact email</th><td>contact@starixis.com</td></tr>
               <tr><th scope="row">Privacy contact email</th><td>contact@starixis.com — <TBC>a dedicated privacy mailbox has not been confirmed; until one is set up, privacy enquiries should be sent to the general contact address above</TBC></td></tr>
@@ -269,7 +269,7 @@ export default function Privacy() {
           <table className="legal-table">
             <tbody>
               <tr><th scope="row">Email</th><td>contact@starixis.com</td></tr>
-              <tr><th scope="row">Postal address</th><td><TBC>registered office / correspondence address to be confirmed</TBC></td></tr>
+              <tr><th scope="row">Postal address</th><td>71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ</td></tr>
             </tbody>
           </table>
         </div>
